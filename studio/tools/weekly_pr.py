@@ -15,7 +15,19 @@ import submit_draft
 
 
 def main():
-    sys.argv = ["plan_content.py", "--days", "9"]
+    # start after everything that is already queued or waiting in an open approval PR, so nothing is planned twice
+    import datetime, re, urllib.request
+    latest = None
+    for p in (submit_draft.REPO / "queue").glob("*/post.json"):
+        d = json.loads(p.read_text(encoding="utf-8"))["scheduled_at"][:10]
+        latest = max(latest or d, d)
+    for pr in submit_draft.api("GET", f"/repos/{submit_draft.SLUG}/pulls?state=open&per_page=50"):
+        m = re.match(r"draft/(\d{4}-\d{2}-\d{2})", pr["head"]["ref"])
+        if m:
+            end = (datetime.date.fromisoformat(m.group(1)) + datetime.timedelta(days=3)).isoformat()  # a bundle's stories run up to the next feed day
+            latest = max(latest or end, end)
+    start = (datetime.date.fromisoformat(latest) + datetime.timedelta(days=1)) if latest else datetime.date.today()
+    sys.argv = ["plan_content.py", "--days", "8", "--from", start.isoformat()]
     plan_content.main()
     if any(submit_draft.DRAFTS.glob("*/post.json")):
         sys.argv = ["submit_draft.py"]
