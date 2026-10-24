@@ -26,6 +26,9 @@ def main():
             m = re.match(r"queue/(\d{4}-\d{2}-\d{2})_", f["filename"])
             if m:
                 latest = max(latest or m.group(1), m.group(1))
+            fm = re.match(r"queue/[^/]+_feed_([a-z0-9-]+)/", f["filename"])
+            if fm:
+                os.environ["USED_SLUGS"] = os.environ.get("USED_SLUGS", "") + "," + fm.group(1)
     start = (datetime.date.fromisoformat(latest) + datetime.timedelta(days=1)) if latest else datetime.date.today()
     sys.argv = ["plan_content.py", "--days", "8", "--from", start.isoformat()]
     plan_content.main()
@@ -33,7 +36,8 @@ def main():
         sys.argv = ["submit_draft.py"]
         submit_draft.main()
         subprocess.run(["git", "checkout", "main"], cwd=submit_draft.REPO)
-    left = [p for p in sorted((ROOT / "content/topics").glob("*.json")) if f"feed:{json.loads(p.read_text(encoding='utf-8'))['id']}" not in plan_content.load_state()["used"]]
+    plan_content.DRAFTS.mkdir(parents=True, exist_ok=True)
+    left = [1 for key, _ in plan_content.feed_candidates(plan_content.load_state())]
     if len(left) < 3:
         body = f"남은 피드 주제가 {len(left)}개예요. 새 주제를 만들어야 해요. (Claude에게 '피드 주제 더 만들어줘'라고 말씀하시거나 OpenAI 키의 Responses 권한을 켜 주세요.)"
         subprocess.run(["gh", "issue", "create", "--title", "피드 주제가 곧 떨어져요", "--body", body], cwd=submit_draft.REPO)

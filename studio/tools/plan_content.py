@@ -71,12 +71,23 @@ def taken_slots():
     return seen
 
 
+def used_slugs():
+    """Topics already in the queue or waiting in an open approval PR (the repo is the source of truth, not a local state file)."""
+    slugs = set(filter(None, os.environ.get("USED_SLUGS", "").split(",")))
+    for d in (REPO / "queue").glob("*_feed_*"):
+        slugs.add(d.name.split("_feed_", 1)[1])
+    for d in DRAFTS.glob("*_feed_*"):
+        slugs.add(d.name.split("_feed_", 1)[1])
+    return slugs
+
+
 def feed_candidates(state):
-    out = []
+    out, used = [], used_slugs()
     for p in sorted((ROOT / "content/topics").glob("*.json")):
         spec = json.loads(p.read_text(encoding="utf-8"))
         key = f"feed:{spec['id']}"
-        if key not in state["used"]:
+        slug = re.sub("[^a-z0-9-]", "", spec["id"].lower())[:30]
+        if key not in state["used"] and slug not in used:
             out.append((key, spec))
     return out
 
