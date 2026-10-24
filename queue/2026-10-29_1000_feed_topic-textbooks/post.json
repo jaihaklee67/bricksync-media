@@ -1,0 +1,41 @@
+{
+ "id": "2026-10-29_1000_feed_topic-textbooks",
+ "type": "feed",
+ "scheduled_at": "2026-10-29T10:00:00+09:00",
+ "images": [
+  "slide-1.jpg",
+  "slide-2.jpg"
+ ],
+ "texts": [
+  "교재도 단계별로",
+  "준비했어요",
+  "Level 1",
+  "기초",
+  "LEGO와 Fortnite로 만드는 코딩 세상. 스토리텔링과 블록코딩으로 시작해요",
+  "Level 2",
+  "Physical AI",
+  "LEGO와 UEFN으로 만드는 코딩 세상. 텍스트 코딩과 기초 Verse를 배워요",
+  "Level 3",
+  "실전",
+  "UEFN 실전가이드 book. Verse 기초부터 맵 퍼블리싱에 도전해요",
+  "나이와 단계에 맞춰 교재를 골라요",
+  "무료 체험수업,",
+  "지금 신청받고 있어요",
+  "대상",
+  "정식 등록된 교육기관/학교",
+  "규모",
+  "1클래스 최대 30명",
+  "시간",
+  "최대 120분",
+  "이렇게 신청하세요",
+  "QR 또는 프로필 링크",
+  "홈페이지 문의에 '무료 체험수업'이라고 적어주세요",
+  "담다 | 꿈길",
+  "프로그램 검색 후 신청",
+  "이메일",
+  "jaihaklee67@naver.com"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-10-29_1000_feed_topic-textbooks",
+ "caption_file": "caption.txt"
+}
