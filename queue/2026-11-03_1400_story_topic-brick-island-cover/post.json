@@ -1,0 +1,14 @@
+{
+ "id": "2026-11-03_1400_story_topic-brick-island-cover",
+ "type": "story",
+ "scheduled_at": "2026-11-03T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "새 게시물에서 자세히 보기"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-03_1000_feed_topic-brick-island",
+ "derived_from": "2026-11-03_1000_feed_topic-brick-island"
+}
