@@ -1,0 +1,17 @@
+{
+ "id": "2026-11-09_1400_story_topic-delivery-card1",
+ "type": "story",
+ "scheduled_at": "2026-11-09T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "우리 기관에 맞춰",
+  "찾아가는 수업",
+  "학교/기관 출강",
+  "오프라인으로 직접 찾아가요"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-08_1000_feed_topic-delivery",
+ "derived_from": "2026-11-08_1000_feed_topic-delivery"
+}
