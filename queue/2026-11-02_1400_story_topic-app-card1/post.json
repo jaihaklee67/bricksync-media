@@ -1,0 +1,17 @@
+{
+ "id": "2026-11-02_1400_story_topic-app-card1",
+ "type": "story",
+ "scheduled_at": "2026-11-02T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "교사와 학부모도",
+  "함께 보는 브릭싱크 앱",
+  "학생/교사/학부모",
+  "계정을 따로 만들어 함께 써요"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-01_1000_feed_topic-app",
+ "derived_from": "2026-11-01_1000_feed_topic-app"
+}
