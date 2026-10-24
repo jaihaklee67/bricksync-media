@@ -299,6 +299,18 @@
       "text": "브릭싱크가 키우려는 인재: 상상력을 화면 밖으로 꺼내는 AI 크리에이티브 인재, 오류를 해결하는 공학 인재, 현실과 가상을 넘나드는 Phygital 융합형 인재, AI로 문제를 해결하는 미래형 인재.",
       "source": "edu_company",
       "status": "verified_public"
+    },
+    {
+      "id": "four-skills",
+      "text": "수업에서 배우는 네 가지: 영어 스토리텔링(내 작품을 영어로 발표), 팀워크와 엔지니어링(함께 논리를 설계하고 문제 해결), 컴퓨터 과학(블록 코딩에서 Verse 코딩까지), 메타버스 디지털 트윈(실물 블록이 LEGO Fortnite에 실시간 반영).",
+      "source": "app_site",
+      "status": "verified_public"
+    },
+    {
+      "id": "quickstart",
+      "text": "시작 가이드: 앱 실행, 학생/교사/학부모 계정 가입, 레고 모델 조립, 레슨과 AI 레슨 체험, Fortnite 맵 접속, 레고와 포트나이트 명령 실시간 실행.",
+      "source": "app_site",
+      "status": "verified_public"
     }
   ],
   "wording_rules": {
