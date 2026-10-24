@@ -1,0 +1,23 @@
+{
+ "id": "2026-11-07_1400_story_topic-camp-5day-promo",
+ "type": "story",
+ "scheduled_at": "2026-11-07T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "무료 체험수업,",
+  "신청받고 있어요",
+  "대상",
+  "정식 등록된 교육기관/학교",
+  "규모",
+  "1클래스 최대 30명",
+  "시간",
+  "최대 120분",
+  "프로필 링크의 문의에",
+  "'무료 체험수업'이라고 남겨주세요"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-05_1000_feed_topic-camp-5day",
+ "derived_from": "2026-11-05_1000_feed_topic-camp-5day"
+}
