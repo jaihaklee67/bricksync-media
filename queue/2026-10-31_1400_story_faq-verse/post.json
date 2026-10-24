@@ -1,0 +1,15 @@
+{
+ "id": "2026-10-31_1400_story_faq-verse",
+ "type": "story",
+ "scheduled_at": "2026-10-31T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "자주 묻는 질문",
+  "포트나이트(UEFN)와 Verse 코딩이 초등학생에게 어렵지 않나요?",
+  "나이별로 난이도를 나눴어요",
+  "초등 저학년은 아이콘 블록 코딩 중심으로 UEFN을 체험하고, Verse 텍스트 코딩은 12세 이상 이노베이터 단계부터 차근차근 시작해요."
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)"
+}

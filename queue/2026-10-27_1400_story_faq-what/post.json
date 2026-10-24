@@ -1,0 +1,15 @@
+{
+ "id": "2026-10-27_1400_story_faq-what",
+ "type": "story",
+ "scheduled_at": "2026-10-27T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "자주 묻는 질문",
+  "브릭싱크는 어떤 교육 프로그램인가요?",
+  "피지컬 컴퓨팅과 AI 코딩이에요",
+  "LEGO SPIKE와 웹 기반 AI 인식(제스처/음성/비전)을 결합해, 포트나이트 맵 '더 브릭 아일랜드'와 실시간으로 상호작용해요. 아이콘 블록 코딩부터 AI, Verse 코딩까지 나이별로 배워요."
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)"
+}

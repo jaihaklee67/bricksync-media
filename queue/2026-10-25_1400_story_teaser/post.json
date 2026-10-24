@@ -1,0 +1,17 @@
+{
+ "id": "2026-10-25_1400_story_teaser",
+ "type": "story",
+ "scheduled_at": "2026-10-25T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "내가 만든 레고가",
+  "포트나이트 속에서 움직여요",
+  "현실",
+  "SYNC",
+  "가상",
+  "새 게시물에서 자세히 보기"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)"
+}
