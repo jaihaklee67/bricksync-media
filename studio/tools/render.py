@@ -35,6 +35,12 @@ ASSETS = {
     "app_gesture_blocks": (root / "assets/ref/app_gesture.webp", "cover", (690, 350, 1140, 500)),
     "app_voice_blocks": (root / "assets/ref/app_voice.webp", "cover", (600, 310, 1000, 450)),
     "app_verse": (root / "assets/ref/app_gesture.webp", "cover", (1456, 140, 2000, 330)),
+    # teacher / parent screens and mission screen (crops avoid e-mail addresses and issued codes)
+    "teacher_dashboard": (root / "assets/safe/teacher_dashboard.png", "cover", None),
+    "teacher_missions": (root / "assets/safe/teacher_missions.png", "cover", None),
+    "parent_overview": (root / "assets/safe/parent_overview.png", "cover", None),
+    "parent_feedback": (root / "assets/safe/parent_feedback.png", "cover", None),
+    "mission_goal": (root / "assets/safe/mission_goal.png", "cover", None),
     # the eight lesson thumbnails shown in the app's unit lists
     "lesson1": (root / "assets/ref/app_units.webp", "cover", (810, 132, 1125, 347)),
     "lesson2": (root / "assets/ref/app_units.webp", "cover", (1141, 132, 1457, 347)),
@@ -380,7 +386,33 @@ def tpl_story_card(P, s):
     L.text_in_box((100, 1300, 980, 1510), s["item_desc"], "do", (50, 60, 90), 54, 36, valign="top", label="card desc")
 
 
-TEMPLATES = {"hero_compare": tpl_hero_compare, "steps": tpl_steps, "levels": tpl_levels, "info_stats": tpl_info_stats,
+def tpl_screen(P, s):
+    """One app screen (cropped) with up to three explanatory rows. The picture height follows the crop's aspect ratio."""
+    L = P.L
+    P.bunting(-14)
+    P.cloud(955, 150, 0.6)
+    title_block(P, s, 140, 78, 62)
+    with Image.open(ASSETS[s["art"]][0]) as _im:
+        iw, ih = _im.size
+    h = max(300, min(500, round(940 * ih / iw)))
+    img = asset_image(s["art"], (940, h))
+    P.photo(img, 70, 350, "screen")
+    y0 = 350 + h + 44
+    rows = s["bullets"]
+    ch = 36 + len(rows) * 96
+    card(P.canvas, 60, y0, 960, ch, fill=WHITE, border=WHITE, radius=44)
+    d = ImageDraw.Draw(P.canvas)
+    for i, b in enumerate(rows):
+        c = col(b.get("color", ["pink", "blue", "green"][i % 3]))
+        ry = y0 + 24 + i * 96
+        d.ellipse([96, ry + 14, 120, ry + 38], fill=c)
+        L.text_in_box((140, ry, 990, ry + 48), b["title"], "jua", NAVY, 36, 28, label="bullet " + b["title"])
+        L.text_in_box((140, ry + 48, 990, ry + 88), b["desc"], "do", BODY, 30, 26, valign="top", max_lines=1, label="bulletdesc " + b["title"])
+    P.bush(90, 1306, 0.55)
+    P.logo(1252)
+
+
+TEMPLATES = {"screen": tpl_screen, "hero_compare": tpl_hero_compare, "steps": tpl_steps, "levels": tpl_levels, "info_stats": tpl_info_stats,
              "cta": tpl_cta, "story_teaser": tpl_story_teaser, "story_promo": tpl_story_promo, "story_faq": tpl_story_faq,
              "story_feed_cover": tpl_story_feed_cover, "story_card": tpl_story_card}
 

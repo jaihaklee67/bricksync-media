@@ -100,6 +100,8 @@ def feed_items(spec):
             return [(it["title"], it["desc"], it["art"], colors[i % 4]) for i, it in enumerate(sl["items"])]
         if sl["template"] == "levels":
             return [(f"{it['age']} {it['name']}", it["desc"], "build", it["color"]) for it in sl["items"]]
+        if sl["template"] == "screen":
+            return [(b["title"], b["desc"], sl["art"], b.get("color", "blue")) for b in sl["bullets"]]
         if sl["template"] == "info_stats":
             return [(c["title"], c["desc"], "build", c["color"]) for c in sl["chips"]]
     return []
