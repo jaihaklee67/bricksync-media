@@ -1,0 +1,39 @@
+{
+ "id": "2026-11-08_1000_feed_topic-delivery",
+ "type": "feed",
+ "scheduled_at": "2026-11-08T10:00:00+09:00",
+ "images": [
+  "slide-1.jpg",
+  "slide-2.jpg"
+ ],
+ "texts": [
+  "우리 기관에 맞춰",
+  "찾아가는 수업",
+  "학교/기관 출강",
+  "오프라인으로 직접 찾아가요",
+  "온라인 클래스",
+  "동영상 클래스(B2C)도 운영해요",
+  "모듈형 커리큘럼",
+  "나이와 희망 기간에 맞춰 설계해요",
+  "전국 출강",
+  "지역 제한 없이 방문해요",
+  "무료 체험수업,",
+  "지금 신청받고 있어요",
+  "대상",
+  "정식 등록된 교육기관/학교",
+  "규모",
+  "1클래스 최대 30명",
+  "시간",
+  "최대 120분",
+  "이렇게 신청하세요",
+  "QR 또는 프로필 링크",
+  "홈페이지 문의에 '무료 체험수업'이라고 적어주세요",
+  "담다 | 꿈길",
+  "프로그램 검색 후 신청",
+  "이메일",
+  "jaihaklee67@naver.com"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-08_1000_feed_topic-delivery",
+ "caption_file": "caption.txt"
+}
