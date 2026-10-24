@@ -28,7 +28,7 @@
     {
      "title": "앱 실행과 가입",
      "desc": "학생/교사/학부모 계정으로 가입해요",
-     "art": "browser"
+     "art": "app_home"
     },
     {
      "title": "레고 모델 조립",
@@ -38,7 +38,7 @@
     {
      "title": "레슨 체험",
      "desc": "레슨과 AI 레슨을 차례로 해 봐요",
-     "art": "blocks"
+     "art": "lesson1"
     },
     {
      "title": "포트나이트 맵 접속",

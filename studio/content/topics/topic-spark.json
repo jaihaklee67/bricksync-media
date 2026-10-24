@@ -29,12 +29,12 @@
     {
      "title": "아이콘 블록 코딩",
      "desc": "글자 대신 직관적인 블록으로 배워요",
-     "art": "blocks"
+     "art": "app_icon_blocks"
     },
     {
      "title": "기초 컴퓨팅 사고",
      "desc": "블록 코딩으로 기초 컴퓨팅 사고를 키워요",
-     "art": "browser"
+     "art": "app_stage"
     },
     {
      "title": "스토리텔링 조립",

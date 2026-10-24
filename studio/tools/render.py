@@ -27,6 +27,23 @@ ASSETS = {
     "build": (root / "output/raw/build_ferris_v1.png", "fit", (60, 0, 1480, 1024)),
     "game": (root / "assets/ref/map_03_crop.png", "cover", (0, 30, 970, 560)),
     "kids": (root / "output/raw/hero_kids_v1.png", "cover", None),
+    # BrickSync app screenshots (user-provided, assets/ref/app_*.webp)
+    "app_home": (root / "assets/ref/app_home.webp", "cover", (810, 240, 1457, 602)),
+    "app_stage": (root / "assets/ref/app_stage.webp", "cover", (590, 328, 1403, 692)),
+    "app_icon_blocks": (root / "assets/ref/app_stage.webp", "cover", (609, 345, 968, 528)),
+    "app_word_blocks": (root / "assets/ref/app_stage.webp", "cover", (1025, 345, 1385, 528)),
+    "app_gesture_blocks": (root / "assets/ref/app_gesture.webp", "cover", (690, 350, 1140, 500)),
+    "app_voice_blocks": (root / "assets/ref/app_voice.webp", "cover", (600, 310, 1000, 450)),
+    "app_verse": (root / "assets/ref/app_gesture.webp", "cover", (1456, 140, 2000, 330)),
+    # the eight lesson thumbnails shown in the app's unit lists
+    "lesson1": (root / "assets/ref/app_units.webp", "cover", (810, 132, 1125, 347)),
+    "lesson2": (root / "assets/ref/app_units.webp", "cover", (1141, 132, 1457, 347)),
+    "lesson3": (root / "assets/ref/app_units.webp", "cover", (810, 398, 1125, 613)),
+    "lesson4": (root / "assets/ref/app_units.webp", "cover", (1141, 398, 1457, 613)),
+    "lesson5": (root / "assets/ref/app_units.webp", "cover", (810, 664, 1457, 874)),
+    "lesson6": (root / "assets/ref/app_ai_units.webp", "cover", (810, 132, 1125, 480)),
+    "lesson7": (root / "assets/ref/app_ai_units.webp", "cover", (1141, 132, 1457, 480)),
+    "lesson8": (root / "assets/ref/app_ai_units.webp", "cover", (810, 531, 1457, 874)),
 }
 CONTACT_URL = "https://edu.bricksync.org/contact"
 
@@ -102,7 +119,7 @@ def capsule(P, x, y, tag, text, tag_color, size=34, h=76, max_w=960):
 # ---------------- feed templates ----------------
 def art_image(kind, size):
     w, h = size
-    if kind in ("build", "game"):
+    if kind in ASSETS:
         return asset_image(kind, size)
     img = Image.new("RGB", size, tint(YELLOW, 0.3) if kind == "blocks" else tint(BLUE, 0.22))
     dd = ImageDraw.Draw(img)

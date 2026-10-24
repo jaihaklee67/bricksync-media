@@ -33,12 +33,12 @@
     {
      "title": "AI 행동 알고리즘",
      "desc": "로봇이 스스로 판단하는 원리를 배워요",
-     "art": "browser"
+     "art": "app_gesture_blocks"
     },
     {
      "title": "Verse 코딩",
      "desc": "나만의 게임 규칙을 직접 만들어요",
-     "art": "blocks"
+     "art": "app_verse"
     },
     {
      "title": "로봇 제어 시스템",
