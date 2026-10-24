@@ -1,15 +1,17 @@
 {
   "timezone": "Asia/Seoul",
-  "note": "초기 가설입니다. 한국 유치원/어린이집 종사자 대상 게시 시간 연구 자료는 찾지 못했습니다. 4주 동안 이 시간대로 올린 뒤 docs/performance.md의 시간대별 반응으로 조정하세요.",
+  "window": {"start": "09:00", "end": "15:00", "note": "평일·주말 모두 이 시간대 안에서만 게시합니다 (사용자 결정 2026-10-24)."},
+  "min_gap_minutes_between_feed_and_story": 120,
+  "note": "피드는 오전, 스토리는 오후로 나눠 같은 시간에 겹쳐 올라가지 않게 했습니다. 한국 유치원/어린이집 종사자의 인스타그램 이용 시간 자료는 찾지 못했습니다. 4주 동안 이 시간대로 올린 뒤 docs/performance.md의 반응으로 조정하세요.",
   "feed": [
-    {"weekday": "tue", "time": "12:20", "why": "점심시간 휴대폰 확인"},
-    {"weekday": "thu", "time": "12:20", "why": "점심시간 휴대폰 확인"},
-    {"weekday": "sun", "time": "20:30", "why": "다음 주 수업·프로그램을 계획하는 저녁"}
+    {"weekday": "tue", "time": "10:00"},
+    {"weekday": "thu", "time": "10:00"},
+    {"weekday": "sun", "time": "10:00"}
   ],
   "story": [
-    {"weekday": "mon", "time": "08:10"}, {"weekday": "tue", "time": "08:10"}, {"weekday": "wed", "time": "08:10"},
-    {"weekday": "thu", "time": "08:10"}, {"weekday": "fri", "time": "08:10"},
-    {"weekday": "tue", "time": "21:00"}, {"weekday": "thu", "time": "21:00"}, {"weekday": "sun", "time": "21:00"}
+    {"weekday": "mon", "time": "14:00"}, {"weekday": "tue", "time": "14:00"}, {"weekday": "wed", "time": "14:00"},
+    {"weekday": "thu", "time": "14:00"}, {"weekday": "fri", "time": "14:00"}, {"weekday": "sat", "time": "14:00"},
+    {"weekday": "sun", "time": "14:00"}
   ],
-  "experiment": "4주 후 피드는 12:20 / 20:30 / 07:50 세 시간대를 비교하고, 반응 점수가 가장 높은 시간대를 2배로 늘립니다."
+  "experiment": "4주 후 피드 10:00과 다른 오전 시간(예: 09:30, 11:30)을 비교하고, 반응 점수가 높은 쪽으로 옮깁니다. 스토리도 13:00 / 14:00 / 15:00 이전을 비교합니다."
 }
