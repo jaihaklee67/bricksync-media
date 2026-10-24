@@ -1,0 +1,17 @@
+{
+ "id": "2026-10-28_1400_story_topic-institution-faq-card1",
+ "type": "story",
+ "scheduled_at": "2026-10-28T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "기관 담당자님이",
+  "자주 물어보세요",
+  "교구는 따로?",
+  "기관 출강은 대부분 교구가 비치되어 있어요"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-10-27_1000_feed_topic-institution-faq",
+ "derived_from": "2026-10-27_1000_feed_topic-institution-faq"
+}
