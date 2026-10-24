@@ -1,0 +1,38 @@
+{
+ "id": "2026-10-27_1220_feed_topic-institution-faq",
+ "type": "feed",
+ "scheduled_at": "2026-10-27T12:20:00+09:00",
+ "images": [
+  "slide-1.jpg",
+  "slide-2.jpg"
+ ],
+ "texts": [
+  "기관 담당자님이",
+  "자주 물어보세요",
+  "교구는 따로?",
+  "기관 출강은 대부분 교구가 비치되어 있어요",
+  "PC 사양은?",
+  "크롬 브라우저의 Web Bluetooth만 되면 실행돼요",
+  "영어 수업도?",
+  "영어유치원/국제학교 맞춤 100% 영어 수업이 가능해요",
+  "방과후/지자체도?",
+  "전국 어디든 지역 제한 없이 찾아가요",
+  "무료 체험수업,",
+  "지금 신청받고 있어요",
+  "대상",
+  "정식 등록된 교육기관/학교",
+  "규모",
+  "1클래스 최대 30명",
+  "시간",
+  "최대 120분",
+  "이렇게 신청하세요",
+  "QR 또는 프로필 링크",
+  "홈페이지 문의에 '무료 체험수업'이라고 적어주세요",
+  "담다 | 꿈길",
+  "프로그램 검색 후 신청",
+  "이메일",
+  "jaihaklee67@naver.com"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "caption_file": "caption.txt"
+}
