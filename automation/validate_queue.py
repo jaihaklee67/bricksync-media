@@ -12,6 +12,7 @@ ROOT = pathlib.Path(__file__).parent.parent
 facts = json.loads((ROOT / "data" / "facts.json").read_text(encoding="utf-8"))
 RULES = facts["wording_rules"]
 SIZES = {"feed": (1080, 1350), "story": (1080, 1920)}
+STATIC = set(json.loads((ROOT / "config" / "story_static.json").read_text(encoding="utf-8"))) if (ROOT / "config" / "story_static.json").exists() else set()
 errors = []
 
 
@@ -76,6 +77,22 @@ def main():
                     errors.append(f"{pid}: caption has no free-trial call to action")
         for t in spec.get("texts", []):  # on-image text exported by the renderer
             check_text(f"{pid}/image-text", t)
+        parent = spec.get("derived_from")
+        if spec["type"] == "story" and not parent:
+            errors.append(f"{pid}: a story must be derived from a feed post (derived_from)")
+        if parent:
+            feed_json = ROOT / "queue" / parent / "post.json"
+            if not feed_json.exists():
+                errors.append(f"{pid}: its feed {parent} is not in the queue")
+            else:
+                feed = json.loads(feed_json.read_text(encoding="utf-8"))
+                allowed = set(feed.get("texts", [])) | STATIC
+                joined = " ".join(feed.get("texts", []))
+                if datetime.datetime.fromisoformat(spec["scheduled_at"]) <= datetime.datetime.fromisoformat(feed["scheduled_at"]):
+                    errors.append(f"{pid}: a story must be scheduled after its feed post")
+                stray = [t for t in spec.get("texts", []) if t not in allowed and t not in joined]
+                if stray and "story_feed_cover" not in spec.get("kind", "") and not pid.endswith("-cover"):
+                    errors.append(f"{pid}: story text not found in its feed or the approved list: {stray[:3]}")
     print(f"checked {checked} unpublished post(s)")
     if errors:
         print("\n".join(" - " + e for e in errors))

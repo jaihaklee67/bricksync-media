@@ -1,0 +1,36 @@
+name: weekly-plan
+on:
+  schedule:
+    - cron: "0 9 * * 5"   # every Friday 18:00 KST
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+concurrency:
+  group: weekly-plan
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow qrcode fonttools
+      - name: Plan the coming days and open the approval pull requests
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MEDIA_REPO: ${{ github.workspace }}
+          PYTHONIOENCODING: utf-8
+        run: python studio/tools/weekly_pr.py
+      - name: Open an issue if planning failed
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue create --title "주간 기획 실패" --body "다음 주 게시물 초안을 만들지 못했어요. 워크플로 실행 로그를 확인해 주세요." || true
