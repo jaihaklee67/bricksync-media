@@ -22,10 +22,10 @@ def main():
         d = json.loads(p.read_text(encoding="utf-8"))["scheduled_at"][:10]
         latest = max(latest or d, d)
     for pr in submit_draft.api("GET", f"/repos/{submit_draft.SLUG}/pulls?state=open&per_page=50"):
-        m = re.match(r"draft/(\d{4}-\d{2}-\d{2})", pr["head"]["ref"])
-        if m:
-            end = (datetime.date.fromisoformat(m.group(1)) + datetime.timedelta(days=3)).isoformat()  # a bundle's stories run up to the next feed day
-            latest = max(latest or end, end)
+        for f in submit_draft.api("GET", f"/repos/{submit_draft.SLUG}/pulls/{pr['number']}/files?per_page=100"):
+            m = re.match(r"queue/(\d{4}-\d{2}-\d{2})_", f["filename"])
+            if m:
+                latest = max(latest or m.group(1), m.group(1))
     start = (datetime.date.fromisoformat(latest) + datetime.timedelta(days=1)) if latest else datetime.date.today()
     sys.argv = ["plan_content.py", "--days", "8", "--from", start.isoformat()]
     plan_content.main()
