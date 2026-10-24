@@ -1,0 +1,15 @@
+{
+ "id": "2026-10-29_0810_story_faq-pc",
+ "type": "story",
+ "scheduled_at": "2026-10-29T08:10:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "자주 묻는 질문",
+  "수업에 필요한 PC 사양은 어떻게 되나요?",
+  "크롬 브라우저만 있으면 돼요",
+  "크롬의 Web Bluetooth 기능만 지원되면 실행되는 웹 앱이라 고사양 PC나 설치 프로그램이 필요 없어요. UEFN/언리얼 실습이 있는 상위 과정은 일반 사무용 PC 이상을 권장해요."
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)"
+}

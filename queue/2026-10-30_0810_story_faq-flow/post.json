@@ -1,0 +1,15 @@
+{
+ "id": "2026-10-30_0810_story_faq-flow",
+ "type": "story",
+ "scheduled_at": "2026-10-30T08:10:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "자주 묻는 질문",
+  "수업은 어떤 방식으로 진행되나요?",
+  "4단계로 진행돼요",
+  "레고 브릭 조립, 블록 코딩, 웹 앱으로 레고 허브 연결, 포트나이트 3D 에셋 실시간 동작 순서예요. 학교/기관 출강과 온라인 동영상 클래스를 모두 운영해요."
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)"
+}

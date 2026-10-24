@@ -1,0 +1,15 @@
+{
+ "id": "2026-10-28_0810_story_faq-equipment",
+ "type": "story",
+ "scheduled_at": "2026-10-28T08:10:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "자주 묻는 질문",
+  "수업을 들으려면 레고 교구를 따로 구매해야 하나요?",
+  "기관 출강은 대부분 필요 없어요",
+  "학교/기관 정규 출강은 대부분 교구가 비치되어 있어요. 온라인 클래스나 가정용 캠프는 SPIKE 키트 구매가 필요할 수 있으니, 신청 전에 준비물을 확인해 주세요."
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)"
+}

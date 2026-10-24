@@ -1,0 +1,15 @@
+{
+ "id": "2026-10-27_2100_story_faq-difference",
+ "type": "story",
+ "scheduled_at": "2026-10-27T21:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "자주 묻는 질문",
+  "기존 레고 조립이나 블록 코딩 학원과 뭐가 다른가요?",
+  "현실과 가상이 하나로 연결돼요",
+  "직접 조립한 레고의 동작이 웹 브라우저를 거쳐 실시간으로 포트나이트 3D 가상 세계와 동기화돼요. 피지컬과 디지털을 하나로 연결하는 것이 가장 큰 차이예요."
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)"
+}
