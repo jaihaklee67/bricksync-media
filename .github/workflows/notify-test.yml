@@ -1,0 +1,13 @@
+name: notify-test
+on:
+  workflow_dispatch:
+permissions:
+  issues: write
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mention the owner from the bot account
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue comment 15 --repo "${{ github.repository }}" --body "@${{ github.repository_owner }} 봇이 보낸 알림 테스트예요. 이 알림이 휴대폰에 오면 승인 알림 설정이 끝난 거예요. (승인할 게시물은 아니에요)"
