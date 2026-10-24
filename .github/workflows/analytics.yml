@@ -1,0 +1,29 @@
+name: collect-analytics
+on:
+  schedule:
+    - cron: "30 13 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Collect
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python automation/analytics.py
+      - name: Commit snapshot
+        run: |
+          git config user.name bricksync-bot
+          git config user.email bricksync-bot@users.noreply.github.com
+          git add data/analytics docs/performance.md
+          git diff --cached --quiet || (git commit -m "Analytics snapshot" && git pull --rebase && git push)

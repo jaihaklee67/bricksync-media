@@ -1,0 +1,15 @@
+{
+  "timezone": "Asia/Seoul",
+  "note": "초기 가설입니다. 한국 유치원/어린이집 종사자 대상 게시 시간 연구 자료는 찾지 못했습니다. 4주 동안 이 시간대로 올린 뒤 docs/performance.md의 시간대별 반응으로 조정하세요.",
+  "feed": [
+    {"weekday": "tue", "time": "12:20", "why": "점심시간 휴대폰 확인"},
+    {"weekday": "thu", "time": "12:20", "why": "점심시간 휴대폰 확인"},
+    {"weekday": "sun", "time": "20:30", "why": "다음 주 수업·프로그램을 계획하는 저녁"}
+  ],
+  "story": [
+    {"weekday": "mon", "time": "08:10"}, {"weekday": "tue", "time": "08:10"}, {"weekday": "wed", "time": "08:10"},
+    {"weekday": "thu", "time": "08:10"}, {"weekday": "fri", "time": "08:10"},
+    {"weekday": "tue", "time": "21:00"}, {"weekday": "thu", "time": "21:00"}, {"weekday": "sun", "time": "21:00"}
+  ],
+  "experiment": "4주 후 피드는 12:20 / 20:30 / 07:50 세 시간대를 비교하고, 반응 점수가 가장 높은 시간대를 2배로 늘립니다."
+}

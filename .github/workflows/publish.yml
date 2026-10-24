@@ -1,0 +1,34 @@
+name: publish-queue
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+concurrency:
+  group: publish-queue
+  cancel-in-progress: false
+permissions:
+  contents: write
+  issues: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Publish due posts
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python automation/queue_publish.py
+      - name: Open an issue when something needs a human
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          body="$(cat problems.txt 2>/dev/null || echo 'The publish job failed. Open the workflow run for details.')"
+          gh issue create --title "게시 자동화: 확인이 필요해요" --body "$body" || true

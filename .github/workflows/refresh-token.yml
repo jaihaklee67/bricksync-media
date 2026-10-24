@@ -1,0 +1,37 @@
+name: refresh-instagram-token
+on:
+  schedule:
+    - cron: "0 18 1,15 * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pynacl
+      - name: Refresh token
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          GH_ADMIN_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
+        run: python automation/refresh_token.py --ci
+      - name: Commit expiry date
+        run: |
+          git config user.name bricksync-bot
+          git config user.email bricksync-bot@users.noreply.github.com
+          git add data/token_state.json
+          git diff --cached --quiet || (git commit -m "Record Instagram token expiry" && git pull --rebase && git push)
+      - name: Open an issue if refresh failed
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue create --title "인스타 토큰 갱신 실패" --body "토큰 갱신이 실패했어요. 만료 전에 새 토큰을 발급해 IG_ACCESS_TOKEN 시크릿을 교체하세요. (docs/setup 참고)" || true
