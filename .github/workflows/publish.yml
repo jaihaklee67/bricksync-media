@@ -1,7 +1,8 @@
 name: publish-queue
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "2,17,32,47 * * * *"
+    - cron: "9,24,39,54 * * * *"
   workflow_dispatch:
 concurrency:
   group: publish-queue
@@ -24,6 +25,8 @@ jobs:
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: python automation/queue_publish.py
       - name: Open an issue when something needs a human
         if: failure()

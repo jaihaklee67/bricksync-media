@@ -8,9 +8,11 @@ a lock without a result needs a human look (the workflow opens an issue).
 Usage: py automation/queue_publish.py [--dry-run] [--base-url https://jaihaklee67.github.io/bricksync-media]"""
 import datetime
 import json
+import os
 import pathlib
 import subprocess
 import sys
+import urllib.request
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from igapi import IG, IGError
@@ -32,6 +34,28 @@ def commit_push(paths, message):
     git("-c", "user.name=bricksync-bot", "-c", "user.email=bricksync-bot@users.noreply.github.com", "commit", "-m", message)
     git("pull", "--rebase", "--autostash", check=False)
     git("push")
+
+
+def notify(text):
+    """Comment on the open '게시 알림' issue with an @mention so the owner gets a push on the phone. Never blocks publishing."""
+    tok, repo = os.environ.get("GH_TOKEN"), os.environ.get("GITHUB_REPOSITORY")
+    if not tok or not repo:
+        return
+    def call(method, path, body=None):
+        req = urllib.request.Request(f"https://api.github.com{path}", method=method, data=json.dumps(body).encode() if body is not None else None,
+                                     headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            raw = r.read()
+            return json.loads(raw) if raw else {}
+    try:
+        owner = repo.split("/")[0]
+        title = "게시 알림"
+        issue = next((i for i in call("GET", f"/repos/{repo}/issues?state=open&per_page=50") if i["title"] == title and "pull_request" not in i), None)
+        if not issue:
+            issue = call("POST", f"/repos/{repo}/issues", {"title": title, "body": "게시가 끝날 때마다 이 이슈에 댓글로 알려 드려요. (이슈를 닫지 마세요)"})
+        call("POST", f"/repos/{repo}/issues/{issue['number']}/comments", {"body": f"@{owner} {text}"})
+    except Exception as e:  # notification problems must not break publishing
+        print("notify failed:", str(e)[:120])
 
 
 def due_posts(now):
@@ -94,9 +118,11 @@ def main():
                 info = ig.publish_carousel(urls, caption)
             lock.write_text(json.dumps({"status": "published", "scheduled_at": spec["scheduled_at"], "published_at": info.get("timestamp"), "media_id": info["id"], "permalink": info.get("permalink"), "type": spec["type"]}, indent=1), encoding="utf-8")
             print(f"published {pid}: {info.get('permalink')}")
+            notify(f"게시했어요 ({'피드' if spec['type'] == 'feed' else '스토리'}): {info.get('permalink')}")
         except IGError as e:
             lock.write_text(json.dumps({"status": "failed", "error": str(e)[:300], "scheduled_at": spec["scheduled_at"]}, indent=1), encoding="utf-8")
             problems.append(f"{pid}: publish failed: {str(e)[:200]}")
+            notify(f"게시에 실패했어요: {pid}. Actions 로그를 확인해 주세요.")
         commit_push([lock], f"Record result for {pid}")
     if problems:
         pathlib.Path(ROOT / "problems.txt").write_text("\n".join(problems), encoding="utf-8")
