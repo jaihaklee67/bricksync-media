@@ -130,5 +130,22 @@ def main():
         sys.exit(2)
 
 
+def run_window(minutes):
+    """Stay alive and publish due posts as their time arrives (checks every minute). GitHub's own schedule can start a job hours late,
+    so a long-running job started early in the morning is what keeps posts close to their scheduled time."""
+    import time
+    end = time.time() + minutes * 60
+    while time.time() < end:
+        try:
+            main()
+        except SystemExit as e:
+            if e.code not in (0, None):
+                print("run reported problems; continuing")
+        time.sleep(60)
+
+
 if __name__ == "__main__":
-    main()
+    if "--window-minutes" in sys.argv:
+        run_window(int(sys.argv[sys.argv.index("--window-minutes") + 1]))
+    else:
+        main()

@@ -1,0 +1,32 @@
+name: publish-window
+on:
+  schedule:
+    - cron: "30 21 * * *"   # 06:30 KST, covers the morning feed slot
+    - cron: "40 21 * * *"
+    - cron: "0 2 * * *"     # 11:00 KST, covers the afternoon story slot
+    - cron: "10 2 * * *"
+  workflow_dispatch:
+concurrency:
+  group: publish-queue
+  cancel-in-progress: false
+permissions:
+  contents: write
+  issues: write
+jobs:
+  window:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Publish posts as their scheduled time arrives
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python automation/queue_publish.py --window-minutes 330
