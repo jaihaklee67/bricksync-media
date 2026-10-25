@@ -1,0 +1,138 @@
+{
+ "collected_at": "2026-10-26T02:11:02+09:00",
+ "account": {
+  "username": "brick_sync",
+  "followers_count": 3,
+  "follows_count": 3,
+  "media_count": 7,
+  "id": "29683675004552603"
+ },
+ "insights_available": true,
+ "posts": [
+  {
+   "id": "18146698960583275",
+   "media_type": "CAROUSEL_ALBUM",
+   "permalink": "https://www.instagram.com/p/De5i-_OjmQW/",
+   "timestamp": "2026-10-25T01:39:00+0000",
+   "like_count": 1,
+   "comments_count": 0,
+   "caption_head": "레고와 포트나이트가 동시에 움직이는 AI 레슨 🙌",
+   "insights": {
+    "reach": 2,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 1,
+    "views": 5
+   }
+  },
+  {
+   "id": "17913315159542165",
+   "media_type": "CAROUSEL_ALBUM",
+   "permalink": "https://www.instagram.com/p/De4MF2ekmUS/",
+   "timestamp": "2026-10-24T12:59:42+0000",
+   "like_count": 1,
+   "comments_count": 0,
+   "caption_head": "내가 만든 레고가 포트나이트 속에서 움직인다면? 🧱🎮",
+   "insights": {
+    "reach": 2,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 1,
+    "views": 5
+   }
+  },
+  {
+   "id": "18105834176212406",
+   "media_type": "VIDEO",
+   "permalink": "https://www.instagram.com/reel/Dd5yNg3pZ1a/",
+   "timestamp": "2026-09-30T07:21:22+0000",
+   "like_count": 3,
+   "comments_count": 0,
+   "caption_head": "🐮 \"Let's help the animals!\" 🐑",
+   "insights": {
+    "reach": 137,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 3,
+    "views": 151
+   }
+  },
+  {
+   "id": "18341679328252605",
+   "media_type": "IMAGE",
+   "permalink": "https://www.instagram.com/p/DdjZThHj5C6/",
+   "timestamp": "2026-09-21T14:39:40+0000",
+   "like_count": 2,
+   "comments_count": 0,
+   "caption_head": "🏕️ AI 에듀테크 기업, BrickSync",
+   "insights": {
+    "reach": 4,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 2,
+    "views": 5
+   }
+  },
+  {
+   "id": "18148546147505018",
+   "media_type": "CAROUSEL_ALBUM",
+   "permalink": "https://www.instagram.com/p/DdjY4jUD4PK/",
+   "timestamp": "2026-09-21T14:35:59+0000",
+   "like_count": 2,
+   "comments_count": 0,
+   "caption_head": "🏰 AI 에듀테크 기업, BrickSync",
+   "insights": {
+    "reach": 4,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 2,
+    "views": 8
+   }
+  },
+  {
+   "id": "18114850724008288",
+   "media_type": "CAROUSEL_ALBUM",
+   "permalink": "https://www.instagram.com/p/DdVGrTbD1-I/",
+   "timestamp": "2026-09-16T01:27:31+0000",
+   "like_count": 2,
+   "comments_count": 0,
+   "caption_head": "📋 BrickSync 교육만의 VALUE✨",
+   "insights": {
+    "reach": 6,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 2,
+    "views": 12
+   }
+  },
+  {
+   "id": "17990220054020749",
+   "media_type": "CAROUSEL_ALBUM",
+   "permalink": "https://www.instagram.com/p/DdVGGckD9Yk/",
+   "timestamp": "2026-09-16T01:22:29+0000",
+   "like_count": 2,
+   "comments_count": 0,
+   "caption_head": "🏰 AI 에듀테크 기업, BrickSync",
+   "insights": {
+    "reach": 6,
+    "saved": 0,
+    "shares": 0,
+    "total_interactions": 2,
+    "views": 8
+   }
+  }
+ ],
+ "stories": [
+  {
+   "id": "18340832728260446",
+   "timestamp": "2026-10-25T05:00:19+0000",
+   "permalink": "https://www.instagram.com/stories/brick_sync/4015495709151108522",
+   "insights": {
+    "reach": 0,
+    "replies": 0,
+    "navigation": 0,
+    "views": 0
+   }
+  }
+ ]
+}
