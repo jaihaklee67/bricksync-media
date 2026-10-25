@@ -109,7 +109,8 @@ def feed_items(spec):
 
 def derived_stories(feed_spec, feed_dir, n):
     """n story specs (one slide each) derived from the feed, in posting order."""
-    cover_title = feed_spec["slides"][0]["title"]
+    item_slide = next((sl for sl in feed_spec["slides"] if sl["template"] in ("steps", "levels", "info_stats", "screen")), feed_spec["slides"][0])
+    cover_title = item_slide["title"]
     cta = next((s for s in feed_spec["slides"] if s["template"] == "cta"), None)
     items = feed_items(feed_spec)
     palettes = ["sky", "sun", "mint", "rose"]

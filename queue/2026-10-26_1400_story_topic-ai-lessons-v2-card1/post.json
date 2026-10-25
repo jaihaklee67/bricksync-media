@@ -1,0 +1,17 @@
+{
+ "id": "2026-10-26_1400_story_topic-ai-lessons-v2-card1",
+ "type": "story",
+ "scheduled_at": "2026-10-26T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "레고와 포트나이트가",
+  "동시에 움직이는 AI 레슨",
+  "아이콘 블록 코딩",
+  "블록을 이으면 레고와 포트나이트가 동시에 움직여요"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-10-25_1035_feed_topic-ai-lessons-v2",
+ "derived_from": "2026-10-25_1035_feed_topic-ai-lessons-v2"
+}

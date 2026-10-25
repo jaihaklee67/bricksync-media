@@ -27,10 +27,14 @@ ASSETS = {
     "build": (root / "output/raw/build_ferris_v1.png", "fit", (60, 0, 1480, 1024)),
     "game": (root / "assets/ref/map_03_crop.png", "cover", (0, 30, 970, 560)),
     "kids": (root / "output/raw/hero_kids_v1.png", "cover", None),
+    "kids_wide": (root / "output/raw/hero_kids_v1.png", "cover", (0, 262, 1536, 785)),    # whole faces, with room above and below
+    "kids_story": (root / "output/raw/hero_kids_v1.png", "cover", (0, 215, 1536, 915)),
+    "gen_gesture": (root / "assets/gen/gesture_hands.png", "cover", (40, 300, 990, 700)),
+    "gen_object": (root / "assets/gen/object_detect.png", "cover", (130, 110, 890, 900)),
     # BrickSync app screenshots (user-provided, assets/ref/app_*.webp)
     "app_home": (root / "assets/ref/app_home.webp", "cover", (810, 240, 1457, 602)),
     "app_stage": (root / "assets/ref/app_stage.webp", "cover", (590, 328, 1403, 692)),
-    "app_icon_blocks": (root / "assets/ref/app_stage.webp", "cover", (609, 345, 968, 528)),
+    "app_icon_blocks": (root / "assets/ref/app_stage.webp", "cover", (640, 380, 940, 495)),
     "app_word_blocks": (root / "assets/ref/app_stage.webp", "cover", (1025, 345, 1385, 528)),
     "app_gesture_blocks": (root / "assets/ref/app_gesture.webp", "cover", (690, 350, 1140, 500)),
     "app_voice_blocks": (root / "assets/ref/app_voice.webp", "cover", (600, 310, 1000, 450)),
@@ -123,8 +127,86 @@ def capsule(P, x, y, tag, text, tag_color, size=34, h=76, max_w=960):
 
 
 # ---------------- feed templates ----------------
+COMBOS = {  # recognition/blocks on the left, the matching Fortnite scene on the right: both react at the same time
+    "combo_blocks": ("blocks_tile", "lesson3", "draw_blocks"),
+    "combo_gesture": ("gen_gesture", "lesson6", "contain"),
+    "combo_voice": ("voice_draw", "lesson7", "draw"),
+    "combo_object": ("gen_object", "lesson8", "cover"),
+}
+
+
+def _blocks_tile(size):
+    """Four real icon blocks cut from the app's block palette (play, timer, motor, move) on the palette's own background."""
+    w, h = size
+    src = Image.open(root / "assets/ref/app_icon_coding.webp").convert("RGB")
+    boxes = [(8, 890, 72, 962), (84, 890, 148, 962), (1346, 890, 1410, 962), (1030, 890, 1094, 962)]
+    bw, bh = 78, 88
+    img = Image.new("RGB", size, (250, 250, 247))
+    gx, gy = (w - (2 * bw + 10)) // 2, (h - (2 * bh + 8)) // 2
+    for i, b in enumerate(boxes):
+        blk = src.crop(b).resize((bw, bh), Image.LANCZOS)
+        img.paste(blk, (gx + (i % 2) * (bw + 10), gy + (i // 2) * (bh + 8)))
+    return img
+
+
+def _voice_tile(size):
+    w, h = size
+    img = Image.new("RGB", size, tint(YELLOW, 0.3))
+    d = ImageDraw.Draw(img)
+    bw, bh = w - 24, int(h * 0.50)
+    d.rounded_rectangle([12, 10, 12 + bw, 10 + bh], 18, fill=WHITE, outline=BLUE, width=3)
+    d.polygon([(w // 2 - 10, 10 + bh), (w // 2 + 10, 10 + bh), (w // 2, 10 + bh + 14)], fill=WHITE, outline=BLUE)
+    d.line([(w // 2 - 8, 10 + bh), (w // 2 + 8, 10 + bh)], fill=WHITE, width=4)
+    f = font("jua", 21)
+    for i, line in enumerate(("앞으로 3바퀴", "돌아!")):
+        d.text((w // 2, 10 + bh / 2 + (i - 0.5) * 27), line, font=f, fill=NAVY, anchor="mm")
+    cx, cy = w // 2, int(h * 0.80)
+    d.rounded_rectangle([cx - 11, cy - 22, cx + 11, cy + 8], 11, fill=PINK)
+    d.arc([cx - 19, cy - 12, cx + 19, cy + 22], 20, 160, fill=PINK, width=4)
+    d.line([(cx, cy + 22), (cx, cy + 30)], fill=PINK, width=4)
+    d.line([(cx - 12, cy + 30), (cx + 12, cy + 30)], fill=PINK, width=4)
+    return img
+
+
+def combo_art(kind, size):
+    w, h = size
+    left_key, right_key, mode = COMBOS[kind]
+    lw, rw = int(w * 0.50), int(w * 0.44)
+    if mode == "draw":
+        left = _voice_tile((lw, h))
+    elif mode == "draw_blocks":
+        left = _blocks_tile((lw, h))
+    elif mode == "fill":
+        left = asset_image(left_key, (lw, h))
+    elif mode == "contain":
+        src = asset_image(left_key, (lw * 3, int(h * 1.6)))  # crop first, then fit whole inside the tile
+        path, _, box = ASSETS[left_key]
+        crop = Image.open(path).convert("RGB").crop(box)
+        k = min(lw / crop.width, h / crop.height)
+        crop = crop.resize((round(crop.width * k), round(crop.height * k)), Image.LANCZOS)
+        left = Image.new("RGB", (lw, h), crop.getpixel((2, 2)))
+        left.paste(crop, ((lw - crop.width) // 2, (h - crop.height) // 2))
+    else:
+        left = asset_image(left_key, (lw, h))
+    right = asset_image(right_key, (rw, h))
+    img = Image.new("RGB", size, WHITE)
+    img.paste(left, (0, 0))
+    img.paste(right, (w - rw, 0))
+    d = ImageDraw.Draw(img)
+    cx, cy, r = w // 2, h // 2, 21
+    d.ellipse([cx - r - 4, cy - r - 4, cx + r + 4, cy + r + 4], fill=WHITE)
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=ORANGE)
+    d.line([(cx - 11, cy - 6), (cx + 7, cy - 6)], fill=WHITE, width=3)
+    d.polygon([(cx + 7, cy - 12), (cx + 13, cy - 6), (cx + 7, cy)], fill=WHITE)
+    d.line([(cx + 11, cy + 7), (cx - 7, cy + 7)], fill=WHITE, width=3)
+    d.polygon([(cx - 7, cy + 1), (cx - 13, cy + 7), (cx - 7, cy + 13)], fill=WHITE)
+    return img
+
+
 def art_image(kind, size):
     w, h = size
+    if kind in COMBOS:
+        return combo_art(kind, size)
     if kind in ASSETS:
         return asset_image(kind, size)
     img = Image.new("RGB", size, tint(YELLOW, 0.3) if kind == "blocks" else tint(BLUE, 0.22))
@@ -189,21 +271,21 @@ def tpl_steps(P, s):
     title_block(P, s, 140, 78, 62)
     if s.get("tagline"):
         P.L.pill(60, 346, s["tagline"], NAVY, size=28, padx=22, h=52, max_w=960)
-    cw, ch, gap = 468, 380, 24
+    cw, ch, gap = 468, 392, 22
     for i, it in enumerate(s["items"]):
         x = 60 + (i % 2) * (cw + gap)
-        y = 440 + (i // 2) * (ch + gap)
+        y = 430 + (i // 2) * (ch + gap)
         card(P.canvas, x, y, cw, ch, fill=(226, 243, 255), border=WHITE, bw=8)
-        aw, ah = cw - 36, 160
+        aw, ah = cw - 36, 196
         img = art_image(it["art"], (aw, ah))
         m = Image.new("L", img.size, 0)
         ImageDraw.Draw(m).rounded_rectangle([0, 0, aw - 1, ah - 1], 24, fill=255)
         P.canvas.paste(img, (x + 18, y + 18), m)
         L.solid((x + 18, y + 18, x + 18 + aw, y + 18 + ah), "art")
-        cy = y + 18 + ah + 46
+        cy = y + 18 + ah + 44
         number_badge(P.canvas, x + 52, cy, i + 1, color=ORANGE, r=30)
         L.text_in_box((x + 100, cy - 32, x + cw - 24, cy + 32), it["title"], "jua", NAVY, 34, 28, label=f"step{i+1} title")
-        L.text_in_box((x + 30, y + 274, x + cw - 30, y + ch - 22), it["desc"], "do", BODY, 32, 28, valign="top", label=f"step{i+1} desc")
+        L.text_in_box((x + 30, y + 18 + ah + 80, x + cw - 30, y + ch - 14), it["desc"], "do", BODY, 31, 27, valign="top", label=f"step{i+1} desc")
     P.bush(90, 1304, 0.6)
     P.logo(1252)
 
@@ -295,18 +377,16 @@ def apply_box(P, x, y, w, h, s):
 def tpl_cta(P, s):
     L = P.L
     P.bunting(-14, n=11)
-    img = asset_image("kids", (940, 290), focus=(0.5, 0.78))
+    img = asset_image("kids_wide", (940, 320))
     P.photo(img, 70, 96, "hero")
-    L.title if False else None
-    t = P.L.title([parts(l) for l in s["title"]], 430, max_size=78, min_size=62)
-    y = 662
-    x = 60
-    w = capsule(P, 60, y, s["capsules"][0][0], s["capsules"][0][1], BLUE, size=32, h=72)
+    L.title([parts(l) for l in s["title"]], 456, max_size=74, min_size=62)
+    y = 640
+    capsule(P, 60, y, s["capsules"][0][0], s["capsules"][0][1], BLUE, size=32, h=72)
     y += 88
     w1 = capsule(P, 60, y, s["capsules"][1][0], s["capsules"][1][1], BLUE, size=32, h=72)
     capsule(P, 60 + w1 + 18, y, s["capsules"][2][0], s["capsules"][2][1], BLUE, size=32, h=72)
-    apply_box(P, 60, 846, 960, 374, s)
-    P.logo(1252)
+    apply_box(P, 60, 818, 960, 402, s)
+    P.logo(1262)
 
 
 # ---------------- story templates ----------------
@@ -339,7 +419,7 @@ def tpl_story_teaser(P, s):
 def tpl_story_promo(P, s):
     L = P.L
     story_frame(P)
-    P.photo(asset_image("kids", (940, 430), focus=(0.5, 0.75)), 70, 330, "hero")
+    P.photo(asset_image("kids_story", (940, 430)), 70, 330, "hero")
     L.title([parts(l) for l in s["title"]], 830, max_size=88, min_size=70)
     y = 1070
     for tag, text in s["capsules"]:

@@ -185,13 +185,11 @@ def toy_brick(canvas, x, y, w, h, color, studs=2, angle=0):
 
 
 def logo(canvas, x=None, y=0, h=64, anchor="right", margin=60):
+    """BrickSync logo placed directly on the background (no white plate; user rule 2026-10-25)."""
     lg = Image.open(root / "brand/logos/VerticlaLogo_BL.png").convert("RGBA")
     lg = lg.crop(lg.getchannel("A").getbbox())
     lg = lg.resize((round(lg.width * h / lg.height), h), Image.LANCZOS)
-    plate = Image.new("RGBA", (lg.width + 44, lg.height + 30), (0, 0, 0, 0))
-    ImageDraw.Draw(plate).rounded_rectangle([0, 0, plate.width - 1, plate.height - 1], 28, fill=(255, 255, 255, 235))
-    plate.alpha_composite(lg, (22, 15))
     if x is None:
-        x = canvas.width - margin - plate.width if anchor == "right" else (canvas.width - plate.width) // 2
-    canvas.alpha_composite(plate, (x, y))
-    return (x, y, x + plate.width, y + plate.height)
+        x = canvas.width - margin - lg.width if anchor == "right" else (canvas.width - lg.width) // 2
+    canvas.alpha_composite(lg, (x, y))
+    return (x, y, x + lg.width, y + lg.height)

@@ -136,6 +136,7 @@ def run_window(minutes):
     import time
     end = time.time() + minutes * 60
     while time.time() < end:
+        git("pull", "--rebase", "--autostash", check=False)  # pick up posts approved while this job is running
         try:
             main()
         except SystemExit as e:

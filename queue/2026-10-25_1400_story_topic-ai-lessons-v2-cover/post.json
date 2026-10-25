@@ -1,5 +1,5 @@
 {
- "id": "2026-10-25_1400_story_topic-ai-lessons-cover",
+ "id": "2026-10-25_1400_story_topic-ai-lessons-v2-cover",
  "type": "story",
  "scheduled_at": "2026-10-25T14:00:00+09:00",
  "images": [
@@ -9,7 +9,6 @@
   "새 게시물에서 자세히 보기"
  ],
  "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
- "bundle": "2026-10-25_1000_feed_topic-ai-lessons",
- "derived_from": "2026-10-25_1000_feed_topic-ai-lessons",
- "auto_approved": true
+ "bundle": "2026-10-25_1035_feed_topic-ai-lessons-v2",
+ "derived_from": "2026-10-25_1035_feed_topic-ai-lessons-v2"
 }
