@@ -1,5 +1,8 @@
 {
- "status": "publishing",
- "started_at": "2026-10-26T06:22:24+00:00",
- "scheduled_at": "2026-10-26T14:00:00+09:00"
+ "status": "published",
+ "scheduled_at": "2026-10-26T14:00:00+09:00",
+ "published_at": "2026-10-26T06:22:34+0000",
+ "media_id": "17953850616325569",
+ "permalink": "https://www.instagram.com/stories/brick_sync/4016261892486372891",
+ "type": "story"
 }
