@@ -1,6 +1,6 @@
 {
   "id": "topic-textbooks", "title": "교재 3종", "type": "feed",
-  "caption": "교재도 단계별로 준비했어요 📚\n\n브릭싱크가 직접 만든 정식 출판 교재 3종이 아이들의 성장 단계에 맞춰 함께해요.\n\n📘 Level 1 | LEGO®와 Fortnite로 만드는 코딩 세상\n📗 Level 2 | LEGO®와 UEFN으로 만드는 코딩 세상\n📙 Level 3 | UEFN 실전가이드 book\n\n유치원·영어유치원·초등학교·영어학원 담당자님께 💌\n교육기관·학교라면 1클래스 최대 30명, 최대 120분의 무료 체험수업을 신청하실 수 있어요.\n\n👉 프로필 링크(edu.bricksync.org)의 문의에 '무료 체험수업'이라고 남겨주세요. 담다·꿈길, 이메일(jaihaklee67@naver.com)로도 신청하실 수 있어요.\n\n#브릭싱크 #피지털AI #코딩교재 #레고포트나이트캠프 #LEGOFortnite #UEFN #방과후코딩 #초등AI교육 #에듀테크 #STEAM",
+  "caption": "교재도 단계별로 준비했어요 📚\n\n브릭싱크가 직접 만든 정식 출판 교재 3종이 아이들의 성장 단계에 맞춰 함께해요.\n\n📘 Level 1 | LEGO®와 Fortnite로 만드는 코딩 세상\n📗 Level 2 | LEGO®와 UEFN으로 만드는 코딩 세상\n📙 Level 3 | UEFN 실전가이드 book\n\n유치원·영어유치원·초등학교·영어학원 담당자님께 💌\n교육기관·학교라면 1클래스 최대 24명, 최대 120분의 무료 체험수업을 신청하실 수 있어요.\n\n👉 프로필 링크(edu.bricksync.org)의 문의에 '무료 체험수업'이라고 남겨주세요. 담다·꿈길, 이메일(jaihaklee67@naver.com)로도 신청하실 수 있어요.\n\n#브릭싱크 #피지털AI #코딩교재 #레고포트나이트캠프 #LEGOFortnite #UEFN #방과후코딩 #초등AI교육 #에듀테크 #STEAM",
   "slides": [
     {"template": "levels", "palette": "rose",
      "title": [[["교재도 단계별로", "navy"]], [["준비했어요", "blue"]]],
@@ -11,7 +11,7 @@
      "footer": "나이와 단계에 맞춰 교재를 골라요"},
     {"template": "cta", "palette": "sky",
      "title": [[["무료 체험수업,", "navy"]], [["지금 신청받고 있어요", "pink"]]],
-     "capsules": [["대상", "정식 등록된 교육기관/학교"], ["규모", "1클래스 최대 30명"], ["시간", "최대 120분"]],
+     "capsules": [["대상", "정식 등록된 교육기관/학교"], ["규모", "1클래스 최대 24명"], ["시간", "최대 120분"]],
      "apply_title": "이렇게 신청하세요",
      "apply_rows": [["QR 또는 프로필 링크", "홈페이지 문의에 '무료 체험수업'이라고 적어주세요", "pink"], ["담다 | 꿈길", "프로그램 검색 후 신청", "blue"], ["이메일", "jaihaklee67@naver.com", "green"]]}
   ]

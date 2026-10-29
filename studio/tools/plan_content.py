@@ -120,7 +120,7 @@ def derived_stories(feed_spec, feed_dir, n):
     promo = None
     if cta:
         promo = ("promo", {"template": "story_promo", "palette": "sun", "title": [[["무료 체험수업,", "navy"]], [["신청받고 있어요", "pink"]]],
-                           "capsules": [["대상", "정식 등록된 교육기관/학교"], ["규모", "1클래스 최대 30명"], ["시간", "최대 120분"]],
+                           "capsules": [["대상", "정식 등록된 교육기관/학교"], ["규모", "1클래스 최대 24명"], ["시간", "최대 120분"]],
                            "cta_line1": "프로필 링크의 문의에", "cta_line2": "'무료 체험수업'이라고 남겨주세요"})
     seq = [out[0]]
     ci = 0
