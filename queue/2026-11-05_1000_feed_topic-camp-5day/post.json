@@ -1,0 +1,39 @@
+{
+ "id": "2026-11-05_1000_feed_topic-camp-5day",
+ "type": "feed",
+ "scheduled_at": "2026-11-05T10:00:00+09:00",
+ "images": [
+  "slide-1.jpg",
+  "slide-2.jpg"
+ ],
+ "texts": [
+  "5일이면 충분한",
+  "메타버스 AI 입문",
+  "5일 기본 과정",
+  "단기 캠프는 5일이 기본이에요",
+  "모터 제어",
+  "기본 모터 제어부터 시작해요",
+  "제스처/음성 AI",
+  "카메라 제스처와 AI 음성 명령의 기초를 배워요",
+  "차시 조정",
+  "기관에 맞춰 차시를 늘리고 줄일 수 있어요",
+  "무료 체험수업,",
+  "지금 신청받고 있어요",
+  "대상",
+  "정식 등록된 교육기관/학교",
+  "규모",
+  "1클래스 최대 24명",
+  "시간",
+  "최대 120분",
+  "이렇게 신청하세요",
+  "QR 또는 프로필 링크",
+  "홈페이지 문의에 '무료 체험수업'이라고 적어주세요",
+  "담다 | 꿈길",
+  "프로그램 검색 후 신청",
+  "이메일",
+  "jaihaklee67@naver.com"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-05_1000_feed_topic-camp-5day",
+ "caption_file": "caption.txt"
+}
