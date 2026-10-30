@@ -1,0 +1,17 @@
+{
+ "id": "2026-11-06_1400_story_topic-camp-5day-card1",
+ "type": "story",
+ "scheduled_at": "2026-11-06T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "5일이면 충분한",
+  "메타버스 AI 입문",
+  "5일 기본 과정",
+  "단기 캠프는 5일이 기본이에요"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-05_1000_feed_topic-camp-5day",
+ "derived_from": "2026-11-05_1000_feed_topic-camp-5day"
+}
