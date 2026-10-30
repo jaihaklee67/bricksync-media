@@ -1,0 +1,17 @@
+{
+ "id": "2026-11-04_1400_story_topic-brick-island-card1",
+ "type": "story",
+ "scheduled_at": "2026-11-04T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "포트나이트 속",
+  "더 브릭 아일랜드",
+  "포트나이트 맵",
+  "레고 작품과 실시간으로 상호작용하는 맵이에요"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-03_1000_feed_topic-brick-island",
+ "derived_from": "2026-11-03_1000_feed_topic-brick-island"
+}
