@@ -1,0 +1,39 @@
+{
+ "id": "2026-11-10_1000_feed_topic-camp-lessons-2",
+ "type": "feed",
+ "scheduled_at": "2026-11-10T10:00:00+09:00",
+ "images": [
+  "slide-1.jpg",
+  "slide-2.jpg"
+ ],
+ "texts": [
+  "캠프에서 만나는",
+  "레슨 5~8",
+  "사이렌 켜기",
+  "레슨 5 | 사이렌을 켜줘",
+  "오두막 지붕",
+  "AI 레슨 6 | 가위, 바위, 보로 여닫는 오두막 지붕",
+  "요술 그네",
+  "AI 레슨 7 | 마이크에 대고 외쳐봐! 목소리로 조종하는 요술 그네",
+  "경보 알림",
+  "AI 레슨 8 | 몬스터를 보여줘! 경보 알림켜기",
+  "무료 체험수업,",
+  "지금 신청받고 있어요",
+  "대상",
+  "정식 등록된 교육기관/학교",
+  "규모",
+  "1클래스 최대 24명",
+  "시간",
+  "최대 120분",
+  "이렇게 신청하세요",
+  "QR 또는 프로필 링크",
+  "홈페이지 문의에 '무료 체험수업'이라고 적어주세요",
+  "담다 | 꿈길",
+  "프로그램 검색 후 신청",
+  "이메일",
+  "jaihaklee67@naver.com"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-10_1000_feed_topic-camp-lessons-2",
+ "caption_file": "caption.txt"
+}
