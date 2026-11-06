@@ -1,0 +1,39 @@
+{
+ "id": "2026-11-08_1000_feed_topic-camp-lessons-1",
+ "type": "feed",
+ "scheduled_at": "2026-11-08T10:00:00+09:00",
+ "images": [
+  "slide-1.jpg",
+  "slide-2.jpg"
+ ],
+ "texts": [
+  "캠프에서 만나는",
+  "레슨 1~4",
+  "탐험보트 출발",
+  "레슨 1 | 탐험보트를 출발시켜요",
+  "바닷속 잠수함",
+  "레슨 2 | 바닷속 잠수함으로 바다를 탐험해요",
+  "대관람차 회전",
+  "레슨 3 | 대관람차 회전하기",
+  "탐험 자동차",
+  "레슨 4 | 탐험 자동차를 만들어요",
+  "무료 체험수업,",
+  "지금 신청받고 있어요",
+  "대상",
+  "정식 등록된 교육기관/학교",
+  "규모",
+  "1클래스 최대 24명",
+  "시간",
+  "최대 120분",
+  "이렇게 신청하세요",
+  "QR 또는 프로필 링크",
+  "홈페이지 문의에 '무료 체험수업'이라고 적어주세요",
+  "담다 | 꿈길",
+  "프로그램 검색 후 신청",
+  "이메일",
+  "jaihaklee67@naver.com"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-08_1000_feed_topic-camp-lessons-1",
+ "caption_file": "caption.txt"
+}
