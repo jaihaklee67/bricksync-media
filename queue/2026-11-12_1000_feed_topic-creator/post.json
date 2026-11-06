@@ -1,0 +1,39 @@
+{
+ "id": "2026-11-12_1000_feed_topic-creator",
+ "type": "feed",
+ "scheduled_at": "2026-11-12T10:00:00+09:00",
+ "images": [
+  "slide-1.jpg",
+  "slide-2.jpg"
+ ],
+ "texts": [
+  "AI와 만나는",
+  "크리에이터(8~11세)",
+  "음성/제스처 인식",
+  "AI 인터랙션의 기초를 배워요",
+  "논리적 사고력",
+  "데이터를 바탕으로 생각하는 힘을 길러요",
+  "프롬프트 활용",
+  "AI에게 똑똑하게 말하는 법을 익혀요",
+  "나만의 3D 월드",
+  "UEFN과 블록 코딩으로 직접 만들어요",
+  "무료 체험수업,",
+  "지금 신청받고 있어요",
+  "대상",
+  "정식 등록된 교육기관/학교",
+  "규모",
+  "1클래스 최대 24명",
+  "시간",
+  "최대 120분",
+  "이렇게 신청하세요",
+  "QR 또는 프로필 링크",
+  "홈페이지 문의에 '무료 체험수업'이라고 적어주세요",
+  "담다 | 꿈길",
+  "프로그램 검색 후 신청",
+  "이메일",
+  "jaihaklee67@naver.com"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-12_1000_feed_topic-creator",
+ "caption_file": "caption.txt"
+}

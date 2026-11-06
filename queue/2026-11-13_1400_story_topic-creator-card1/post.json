@@ -1,0 +1,17 @@
+{
+ "id": "2026-11-13_1400_story_topic-creator-card1",
+ "type": "story",
+ "scheduled_at": "2026-11-13T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "AI와 만나는",
+  "크리에이터(8~11세)",
+  "음성/제스처 인식",
+  "AI 인터랙션의 기초를 배워요"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-12_1000_feed_topic-creator",
+ "derived_from": "2026-11-12_1000_feed_topic-creator"
+}
