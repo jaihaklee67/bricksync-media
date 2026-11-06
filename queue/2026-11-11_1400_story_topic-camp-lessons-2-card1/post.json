@@ -1,0 +1,17 @@
+{
+ "id": "2026-11-11_1400_story_topic-camp-lessons-2-card1",
+ "type": "story",
+ "scheduled_at": "2026-11-11T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "캠프에서 만나는",
+  "레슨 5~8",
+  "사이렌 켜기",
+  "레슨 5 | 사이렌을 켜줘"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-10_1000_feed_topic-camp-lessons-2",
+ "derived_from": "2026-11-10_1000_feed_topic-camp-lessons-2"
+}
