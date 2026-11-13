@@ -1,0 +1,17 @@
+{
+ "id": "2026-11-18_1400_story_topic-four-skills-card1",
+ "type": "story",
+ "scheduled_at": "2026-11-18T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "수업에서 배우는",
+  "네 가지 힘",
+  "영어 스토리텔링",
+  "내 작품을 영어로 이야기해요"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-17_1000_feed_topic-four-skills",
+ "derived_from": "2026-11-17_1000_feed_topic-four-skills"
+}

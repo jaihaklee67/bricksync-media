@@ -1,0 +1,39 @@
+{
+ "id": "2026-11-17_1000_feed_topic-four-skills",
+ "type": "feed",
+ "scheduled_at": "2026-11-17T10:00:00+09:00",
+ "images": [
+  "slide-1.jpg",
+  "slide-2.jpg"
+ ],
+ "texts": [
+  "수업에서 배우는",
+  "네 가지 힘",
+  "영어 스토리텔링",
+  "내 작품을 영어로 이야기해요",
+  "팀워크와 엔지니어링",
+  "함께 논리를 설계하고 문제를 풀어요",
+  "컴퓨터 과학",
+  "블록 코딩에서 Verse 코딩까지 풀어요",
+  "디지털 트윈",
+  "실물 블록이 포트나이트에 똑같이 나타나요",
+  "무료 체험수업,",
+  "지금 신청받고 있어요",
+  "대상",
+  "정식 등록된 교육기관/학교",
+  "규모",
+  "1클래스 최대 24명",
+  "시간",
+  "최대 120분",
+  "이렇게 신청하세요",
+  "QR 또는 프로필 링크",
+  "홈페이지 문의에 '무료 체험수업'이라고 적어주세요",
+  "담다 | 꿈길",
+  "프로그램 검색 후 신청",
+  "이메일",
+  "jaihaklee67@naver.com"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-17_1000_feed_topic-four-skills",
+ "caption_file": "caption.txt"
+}
