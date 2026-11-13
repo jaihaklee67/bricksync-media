@@ -1,0 +1,14 @@
+{
+ "id": "2026-11-19_1400_story_topic-innovator-cover",
+ "type": "story",
+ "scheduled_at": "2026-11-19T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "새 게시물에서 자세히 보기"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-19_1000_feed_topic-innovator",
+ "derived_from": "2026-11-19_1000_feed_topic-innovator"
+}

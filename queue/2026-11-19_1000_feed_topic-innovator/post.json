@@ -1,0 +1,39 @@
+{
+ "id": "2026-11-19_1000_feed_topic-innovator",
+ "type": "feed",
+ "scheduled_at": "2026-11-19T10:00:00+09:00",
+ "images": [
+  "slide-1.jpg",
+  "slide-2.jpg"
+ ],
+ "texts": [
+  "센서와 AI로",
+  "이노베이터(12~14세)",
+  "디지털 트윈 기초",
+  "센서로 모은 정보를 가상 3D 공간에 옮겨요",
+  "AI 행동 알고리즘",
+  "로봇이 스스로 판단하는 원리를 배워요",
+  "Verse 코딩",
+  "나만의 게임 규칙을 직접 만들어요",
+  "로봇 제어 시스템",
+  "코딩으로 로봇 제어를 완성해요",
+  "무료 체험수업,",
+  "지금 신청받고 있어요",
+  "대상",
+  "정식 등록된 교육기관/학교",
+  "규모",
+  "1클래스 최대 24명",
+  "시간",
+  "최대 120분",
+  "이렇게 신청하세요",
+  "QR 또는 프로필 링크",
+  "홈페이지 문의에 '무료 체험수업'이라고 적어주세요",
+  "담다 | 꿈길",
+  "프로그램 검색 후 신청",
+  "이메일",
+  "jaihaklee67@naver.com"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-19_1000_feed_topic-innovator",
+ "caption_file": "caption.txt"
+}
