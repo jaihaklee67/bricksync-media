@@ -1,0 +1,17 @@
+{
+ "id": "2026-11-23_1400_story_topic-mission-card1",
+ "type": "story",
+ "scheduled_at": "2026-11-23T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "미션으로",
+  "하나씩 배워요",
+  "이번 미션의 목표",
+  "단원마다 해낼 목표가 있어요"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-22_1000_feed_topic-mission",
+ "derived_from": "2026-11-22_1000_feed_topic-mission"
+}
