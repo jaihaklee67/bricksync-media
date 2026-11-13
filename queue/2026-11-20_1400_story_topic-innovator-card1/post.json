@@ -1,0 +1,17 @@
+{
+ "id": "2026-11-20_1400_story_topic-innovator-card1",
+ "type": "story",
+ "scheduled_at": "2026-11-20T14:00:00+09:00",
+ "images": [
+  "story-1.jpg"
+ ],
+ "texts": [
+  "센서와 AI로",
+  "이노베이터(12~14세)",
+  "디지털 트윈 기초",
+  "센서로 모은 정보를 가상 3D 공간에 옮겨요"
+ ],
+ "qa": "programmatic PASS; vision: SKIPPED (the OpenAI key has no Responses permission)",
+ "bundle": "2026-11-19_1000_feed_topic-innovator",
+ "derived_from": "2026-11-19_1000_feed_topic-innovator"
+}
